@@ -5,7 +5,7 @@ const router = express.Router();
 
 async function loadPostsCollection() {
   const client = await mongodb.MongoClient.connect(
-    'mongodb+srv://arc:arc123@cluster1.pmill.mongodb.net/blog_vue_express?retryWrites=true&w=majority', {
+    process.env.MONGO_DB, {
       useNewUrlParser: true,
     },
   );
