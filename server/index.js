@@ -1,3 +1,5 @@
+/* eslint-disable no-path-concat */
+/* eslint-disable prefer-template */
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -20,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 
   // Handle SPA
 
-  app.get(/.*/, (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 }
 
 const port = process.env.PORT || 5000;
